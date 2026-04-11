@@ -1,30 +1,20 @@
 import { Routes, Route } from "react-router-dom";
-
 import LandingPage from "./pages/LandingPage";
-import LoginPage from "./pages/LoginPage";
-import StudentLogin from "./pages/StudentLogin";
-import StudentPage from "./pages/StudentPage";
-import InstructorLogin from "./pages/InstructorLogin";
-import InstructorClasses from "./pages/InstructorClasses";
-import InstructorDashboard from "./pages/InstructorDashboard";
-import NotFound from "./pages/NotFound";
 
-export default function App() {
+// Temporary pages (so routes don’t crash)
+const Login = () => <h1>Login Page</h1>;
+const StudentLogin = () => <h1>Student Login</h1>;
+const InstructorLogin = () => <h1>Instructor Login</h1>;
+
+function App() {
   return (
     <Routes>
-
       <Route path="/" element={<LandingPage />} />
-      <Route path="/login" element={<LoginPage />} />
-
+      <Route path="/login" element={<Login />} />
       <Route path="/student-login" element={<StudentLogin />} />
-      <Route path="/student" element={<StudentPage />} />
-
       <Route path="/instructor-login" element={<InstructorLogin />} />
-      <Route path="/instructor/classes" element={<InstructorClasses />} />
-      <Route path="/instructor/dashboard" element={<InstructorDashboard />} />
-
-      <Route path="*" element={<NotFound />} />
-
     </Routes>
   );
 }
+
+export default App;
